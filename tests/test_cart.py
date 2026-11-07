@@ -18,6 +18,8 @@ class TestCartLimit(unittest.TestCase):
             cart.add_dvd(DigitalVideoDisc("DVD 21"))
         )
 
+def total_cost_with_discount(self, percent):
+    return self.total_cost() * percent / 100
 
 # class TestCartDiscount(unittest.TestCase):
 #     def test_discount_calculation(self):
