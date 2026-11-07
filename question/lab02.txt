@@ -1,0 +1,4 @@
+Thảo luận: Vì sao phải đồng bộ master trước khi PR? Khi nào không được rebase? feature/* khác topic/* ra sao?
++ Cần đồng bộ master trước khi tạo Pull Request (PR) để đảm bảo nhánh tính năng được cập nhật với những thay đổi mới nhất, giảm nguy cơ xung đột khi merge và giúp kiểm tra tính tương thích của code với phiên bản hiện tại. 
++ Không nên sử dụng rebase đối với các commit đã được push và chia sẻ với người khác vì rebase viết lại lịch sử commit, có thể gây ảnh hưởng đến những người đang sử dụng nhánh đó. 
++ Nhánh feature/* thường dùng để phát triển một tính năng cụ thể trong dự án, còn topic/* thường dùng để giải quyết một chủ đề hoặc thay đổi nhỏ, độc lập hơn; cả hai đều là quy ước đặt tên nhánh, không có sự khác biệt về cơ chế hoạt động của Git
