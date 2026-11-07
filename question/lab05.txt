@@ -1,0 +1,10 @@
+- Vì sao không merge cả nhánh hotfix vào master? compare/master...hotfix/... báo Can't automatically merge: commit 2 đặt 1.0.1, xung đột với 1.1.0 trên master.
++ Không merge toàn bộ nhánh hotfix/* vào master vì nhánh hotfix có thể chứa những commit không phù hợp với lịch sử phát triển hiện tại. Trong trường hợp này, commit 2 đặt phiên bản 1.0.1 trong khi master đã có phiên bản 1.1.0, gây xung đột về phiên bản khi merge. Vì vậy, cần lựa chọn và lan truyền phần sửa lỗi phù hợp thay vì merge toàn bộ nhánh một cách máy móc
+
+- Vì sao ở Phần A chưa gắn tag v1.1.0? Nếu đã gắn rồi thì bây giờ phải phát hành v1.1.1.
++ Ở Phần A chưa gắn tag v1.1.0 vì chưa xác định đây là phiên bản phát hành chính thức; nếu đã gắn tag, việc sửa lỗi tiếp theo sẽ cần phát hành phiên bản mới v1.1.1 theo Semantic Versioning.
+
+- Ưu, nhược điểm của upstream first so với release first? Nếu quên lan truyền bản sửa sang release/lab05,
+lệnh nào ở Phần F sẽ phát hiện?
++ Upstream first có ưu điểm là sửa lỗi trên nhánh chính trước, sau đó lan truyền sang các nhánh release, giúp tránh sửa trùng lặp và giữ một nguồn thay đổi chuẩn; nhược điểm là có thể bỏ sót việc cập nhật các nhánh release. Release first có ưu điểm là ưu tiên sửa lỗi trên phiên bản đang được phát hành, nhưng dễ tạo ra các thay đổi phân nhánh và phải lan truyền ngược về nhánh chính. 
++ Nếu quên lan truyền bản sửa sang release/lab05, lệnh git cherry -v master release/lab05 có thể phát hiện các commit đã có trên master nhưng chưa được đưa vào nhánh release.
