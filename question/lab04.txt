@@ -1,0 +1,7 @@
+- Vì sao chuẩn bị trên master trước, không sửa trên nhánh release?
++ Chuẩn bị trên master trước vì đây là nhánh chính dùng để quản lý và tích hợp các thay đổi chung của dự án. Nhánh release/* đóng vai trò baseline, lưu lại phiên bản mã nguồn chuẩn tại thời điểm bắt đầu lab để đối chiếu và kiểm tra kết quả. Nếu sửa trực tiếp trên release/*, baseline sẽ bị thay đổi, làm mất tính nhất quán khi so sánh và đánh giá. Vì vậy, nên thực hiện các thay đổi trên master hoặc các nhánh phát triển riêng, đồng thời giữ release/* ổn định để phục vụ tham chiếu và kiểm thử.
+
+- Vì sao release/* không merge vào master? So sánh với GitFlow. Vì sao lên 1.0.0 mà không phải 0.4.0?
++ Không merge release/* vào master vì trong quy trình lab, release/* được dùng làm baseline để lưu phiên bản mã nguồn ban đầu, phục vụ đối chiếu và kiểm tra, không phải nhánh phát triển để tích hợp thay đổi. 
++ Điều này khác với GitFlow, trong đó nhánh release được tạo từ develop để chuẩn bị phát hành và sau đó được merge vào cả master (hoặc main) và develop. 
++ Phiên bản 1.0.0 được sử dụng thay vì 0.4.0 vì đây là mốc đánh dấu phiên bản phát hành ổn định đầu tiên, thể hiện dự án đã đạt mức hoàn thiện và sẵn sàng sử dụng; theo Semantic Versioning, 0.x.x thường dành cho giai đoạn phát triển ban đầu, khi API chưa ổn định.
