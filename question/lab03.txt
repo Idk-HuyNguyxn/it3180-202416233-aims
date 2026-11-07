@@ -1,0 +1,3 @@
+Câu hỏi: Merge base là gì? Vì sao master và release/* phải dùng revert thay vì reset?
++ Merge base là commit chung gần nhất trong lịch sử của hai nhánh, được Git sử dụng làm điểm tham chiếu để xác định những thay đổi cần hợp nhất khi merge. 
++ Đối với master và release/*, nên dùng git revert thay vì git reset vì đây thường là các nhánh dùng chung và có lịch sử commit đã được push lên remote. git revert tạo một commit mới để đảo ngược thay đổi nhưng vẫn giữ nguyên lịch sử, giúp những người khác đồng bộ dễ dàng. Ngược lại, git reset di chuyển HEAD về commit trước đó và có thể viết lại lịch sử, gây mất đồng bộ hoặc ảnh hưởng đến công việc của các thành viên khác.
