@@ -18,26 +18,24 @@ class TestCartLimit(unittest.TestCase):
             cart.add_dvd(DigitalVideoDisc("DVD 21"))
         )
 
-def total_cost_with_discount(self, percent):
-    return self.total_cost() * percent / 100
 
-# class TestCartDiscount(unittest.TestCase):
-#     def test_discount_calculation(self):
-#         cart = Cart()
-#         dvd = DigitalVideoDisc("The Lion King")
-#         dvd.cost = 100.0
+class TestCartDiscount(unittest.TestCase):
+    def test_discount_calculation(self):
+        cart = Cart()
+        dvd = DigitalVideoDisc("The Lion King")
+        dvd.cost = 100.0
 
-#         cart.add_dvd(dvd)
+        cart.add_dvd(dvd)
 
-#         self.assertAlmostEqual(
-#             cart.total_cost_with_discount(20), 80.0
-#         )
+        self.assertAlmostEqual(
+            cart.total_cost_with_discount(20), 80.0
+        )
 
-#     def test_invalid_discount_percent(self):
-#         cart = Cart()
+    def test_invalid_discount_percent(self):
+        cart = Cart()
 
-#         with self.assertRaises(ValueError):
-#             cart.total_cost_with_discount(150)
+        with self.assertRaises(ValueError):
+            cart.total_cost_with_discount(150)
 
 
 if __name__ == "__main__":
