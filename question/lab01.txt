@@ -1,0 +1,11 @@
+Câu hỏi nhanh: cấu hình --global được lưu ở đâu? Khác gì so với --local?
+
++ --global: được lưu trong file ~/.gitconfig (C:\Users\<username>\.gitconfig), áp dụng cho tất cả repository
++ --local: được lưu trong file .git/config bên trong từng repository và chỉ có hiệu lực đối với repository đó.
+
+Thảo luận: Vì sao dùng git mv? release/lab01 có phải baseline? Vì sao không commit thẳng master dù làm một
+mình?
+
++ Sử dụng git mv để đổi tên hoặc di chuyển file/thư mục và giúp Git theo dõi thay đổi đó như một thao tác rename, thay vì phải xóa file cũ rồi thêm file mới thủ công. 
++ Nhánh release/lab01 có thể xem là baseline, tức phiên bản mã nguồn chuẩn được cung cấp để làm mốc tham chiếu và kiểm tra kết quả thực hiện lab. 
++ Không commit trực tiếp lên master dù làm việc một mình vì cần giữ master ổn định, đồng thời sử dụng các nhánh riêng để phát triển, thử nghiệm và kiểm tra thay đổi. Cách làm này giúp dễ quản lý lịch sử commit, so sánh phiên bản, phát hiện lỗi và khôi phục khi cần thiết, đồng thời hình thành quy trình làm việc Git chuyên nghiệp khi tham gia dự án nhóm.
