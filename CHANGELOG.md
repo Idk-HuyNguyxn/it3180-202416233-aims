@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 Cart.sort_by_title() và Cart.sort_by_cost(): Sắp xếp giỏ hàng theo tiêu đề và giá tiền.
-## [1.0.0] - 2026-11-07
+## [1.0.1] - 2026-11-07
 ### Added
 - Cart.print_cart(), search_by_title(), total_cost_with_discount()
 - Pull request template
